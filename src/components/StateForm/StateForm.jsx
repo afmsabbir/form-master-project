@@ -4,14 +4,13 @@ const StateForm = () => {
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
   const [name, setName] = useState(null);
-  const [error, setError] = useState('')
+  const [error, setError] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(password.length < 8){
-        setError('must be 8 character')
-    }
-    else{
-        setError('')
+    if (password.length < 8) {
+      setError("must be 8 character");
+    } else {
+      setError("");
     }
     console.log(email, password, name);
   };
@@ -31,12 +30,15 @@ const StateForm = () => {
         <br />
         <input onChange={handleEmailChange} type="email" name="email" id="" />
         <br />
-        <input onChange={handlePassChange} type="password" name="password" required/>
+        <input
+          onChange={handlePassChange}
+          type="password"
+          name="password"
+          required
+        />
         <br />
         <input type="submit" value="Submit" />
-        {
-            error && <p>{error}</p>
-        }
+        {error && <p>{error}</p>}
       </form>
     </div>
   );
